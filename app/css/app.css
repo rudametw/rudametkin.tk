@@ -28,3 +28,57 @@
   content: "";
   padding: 0;
 }
+
+/* Sticky footer style */
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	background-image: url('../img/background.png');
+	background-size: 100%;
+	background-color: #666666;
+	background-repeat: repeat-y;
+	display: compact;
+	color: #dddddd;
+	/* The html and body elements cannot have any padding or margin. */
+}
+
+
+/* Wrapper for page content to push down footer */
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+	margin: 0 auto 0px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+	height: 60px;
+	text-align: center;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+	#footer {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		text-align: center;
+	}
+}
+
+/* Not required for template or sticky footer method. */
+
+.container {
+	width: auto;
+	max-width: 840px;
+}
+.container .credit {
+	margin: 20px 0;
+	text-align: center;
+}
