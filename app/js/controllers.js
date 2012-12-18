@@ -26,6 +26,16 @@ function PublicationListCtrl($scope, $http) {
 
 
   // $scope.orderProp = 'age';
+
+//  $scope.pubByYear = function(year){
+//    var pub[];
+//
+//    $scope.publications.foreach()
+//
+//    return pub;
+//  };
+
+
 }
 
 function HomeCtrl() {
