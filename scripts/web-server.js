@@ -6,7 +6,7 @@ var util = require('util'),
     url = require('url'),
     events = require('events');
 
-var DEFAULT_PORT = 8000;
+var DEFAULT_PORT = 8080;
 var DEFAULT_IP = '127.0.0.1';
 
 function main(argv) {
@@ -43,7 +43,7 @@ function HttpServer(handlers) {
 
 HttpServer.prototype.start = function(port, ip) {
   this.port = port;
-  this.server.listen(port);
+  this.server.listen(port,ip);
 //  util.puts('Http Server running at http://localhost:' + port + '/');
   util.puts('Http Server running at http://' + ip + ':' + port + '/');
 };
