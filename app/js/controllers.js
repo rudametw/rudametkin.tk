@@ -49,7 +49,8 @@ function ContactCtrl($scope, $http) {
 
   $scope.contact = {
       "name": "Walter Rudametkin",
-      "email_name": "Walter.Rudametkin",
+//      "email_name": "Walter.Rudametkin",
+      "email_name": "Firstname.Lastname",
       "email_domain": "imag",
       "email_tl": "fr",
       "address_1": "Equipe Adèle",
