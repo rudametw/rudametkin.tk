@@ -7,12 +7,15 @@ var util = require('util'),
     events = require('events');
 
 var DEFAULT_PORT = 8000;
+var DEFAULT_IP = '127.0.0.1';
 
 function main(argv) {
   new HttpServer({
     'GET': createServlet(StaticServlet),
     'HEAD': createServlet(StaticServlet)
-  }).start(Number(argv[2]) || DEFAULT_PORT);
+//  }).start(Number(argv[2]) || DEFAULT_PORT);
+  }).start(Number(argv[2]) || DEFAULT_PORT, argv[3] || DEFAULT_IP);
+
 }
 
 function escapeHtml(value) {
@@ -38,10 +41,11 @@ function HttpServer(handlers) {
   this.server = http.createServer(this.handleRequest_.bind(this));
 }
 
-HttpServer.prototype.start = function(port) {
+HttpServer.prototype.start = function(port, ip) {
   this.port = port;
   this.server.listen(port);
-  util.puts('Http Server running at http://localhost:' + port + '/');
+//  util.puts('Http Server running at http://localhost:' + port + '/');
+  util.puts('Http Server running at http://' + ip + ':' + port + '/');
 };
 
 HttpServer.prototype.parseUrl_ = function(urlString) {
@@ -90,6 +94,13 @@ StaticServlet.prototype.handleRequest = function(req, res) {
   var path = ('./' + req.url.pathname).replace('//','/').replace(/%(..)/g, function(match, hex){
     return String.fromCharCode(parseInt(hex, 16));
   });
+
+  /* Added by me in order to make the index.html appear initially */
+  if (path === './'){
+    path = './index.html';
+    util.puts('replaced root path with index.html');
+  }
+
   var parts = path.split('/');
   if (parts[parts.length-1].charAt(0) === '.')
     return self.sendForbidden_(req, res, path);
