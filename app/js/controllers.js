@@ -2,7 +2,14 @@
 
 /* Controllers */
 
-function PublicationListCtrl($scope, $http) {
+function HomeCtrl($scope, $rootScope, $http) {
+  $rootScope.currentView="home";
+}
+//HomeCtrl.$inject = [];
+
+
+function PublicationListCtrl($scope, $rootScope, $http) {
+  $rootScope.currentView="publications";
   $http.get('publications/publications.json').success(function(data) {
     $scope.publications = data;
   });
@@ -38,11 +45,8 @@ function PublicationListCtrl($scope, $http) {
 
 }
 
-function HomeCtrl() {
-}
-HomeCtrl.$inject = [];
-
-function ContactCtrl($scope, $http) {
+function ContactCtrl($scope, $rootScope, $http) {
+  $rootScope.currentView="contact";
 //  $http.get('contact/contact.json').success(function(data) {
 //    $scope.contact = data;
 //  });

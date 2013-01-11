@@ -2,20 +2,22 @@
 <html lang="en" data-ng-app="myApp" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
-<title>rudametkin.tk</title>
+<title>walter rudametkin's personal website</title>
+<!-- <link rel="stylesheet" href="css/app.css" /> -->
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" /> -->
+<link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/app.css" />
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
-</head>
+<!-- <link rel="stylesheet" href="css/bootstrap-responsive.css"> -->
 
+</head>
 <body>
     <div id="wrap">
         <!-- Navbar-->
         <div class="container navbar-wrapper">
-
             <div class="navbar navbar-fixed-top navbar-inverse">
                 <div class="navbar-inner">
                     <div class="container">
-                        <a class="brand" href="#/" style="padding-top: 6px; padding-bottom: 0px;"> rudametkin.tk</a>
+                        <a class="brand" href="#" style="padding-top: 6px; padding-bottom: 0px;"> walter rudametkin</a>
                         <!-- <img class="AngularJS-small" src="http://angularjs.org/img/AngularJS-small.png">  -->
 
                         <ul class="nav">
@@ -23,9 +25,7 @@
 
                             <li data-ng-class="{active: currentView == 'home'}"><a href="#/home"><i class="icon-home icon-white"></i> Home</a></li>
                             <li data-ng-class="{active: currentView == 'resume'}"><a href="#/home"><i class="icon-user icon-white"></i> Resume</a></li>
-                            <li data-ng-class="{active: currentView == 'publications'}"><a href="#/publications"> <i class="icon-file icon-white"></i>
-                                    Publications
-                            </a></li>
+                            <li data-ng-class="{active: currentView == 'publications'}"><a href="#/publications"> <i class="icon-file icon-white"></i> Publications & Presentations</a></li>
                             <li data-ng-class="{active: currentView == 'courses'}"><a href="#/home"><i class="icon-book icon-white"></i> Courses</a></li>
                             <li data-ng-class="{active: currentView == 'contact'}"><a href="#/contact"><i class="icon-envelope icon-white"></i> Contact</a></li>
                         </ul>
@@ -39,11 +39,11 @@
     </div>
 
     <!-- Footer -->
-    <!--     <div id="footer"> -->
-    <!--         <div class="container"> -->
-    <!--             <p class="muted credit">Walter Rudametkin - 2012</p> -->
-    <!--         </div> -->
-    <!--     </div> -->
+        <div id="footer">
+            <div class="container">
+                <p class="muted credit">Walter Rudametkin - 2012</p>
+            </div>
+        </div>
 
     <!--     Footer -->
     <div id="footer">
@@ -60,18 +60,17 @@
     </div>
 
 
-
-    <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/directives.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+
     <!-- <script src="js/email.js"></script> -->
     <!-- In production use:<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>-->
-
 
 </body>
 </html>
